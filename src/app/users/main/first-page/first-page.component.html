@@ -1,0 +1,21 @@
+<h1>Welcome back to Spencers: {{name}} </h1>
+<p>Name employee: {{name}}</p>
+<p>Lastname employee: {{lastname}}</p>
+<p>age employee: {{age}}</p>
+<p>Over age: {{age <18 ? "UnderAge":"Overage"}} </p>
+<p>bussiness employee: {{bussinessName.value}}</p>
+
+Introduce the company name: <input type="text" #bussinessName (keyup)="0" [disabled]="ableSquare">
+
+<!-- Introduce your name: <input type="text" #name (keyup)="0"> -->
+Introduce your name: <input type="text" (input)="changeName($event)">
+<br/>
+<br/>
+
+<input type="button" value="Get it" (click)="getRegistered($event)"/>
+<br/>
+<br/>
+{{textoDeRegistro}} <br/>
+Registrado <input type="checkbox" id="registro" [checked]="userRegistered"/>
+<hr>
+

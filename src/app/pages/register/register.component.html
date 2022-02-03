@@ -1,0 +1,64 @@
+<div class="box">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 class="inactive underlineHover"><a  [routerLink]="['/login']"> Sign In</a> </h2>
+	  <h2 class="active">Sign Up </h2>
+	  <hr>
+	  <h2>New User Registration</h2>
+  
+	  <!-- Login Form -->
+        <div class="form_wrapper">
+            <div class="form_container">
+              <div class="row clearfix">
+                <div class="">
+                  <form [formGroup]="newUserForm" >
+                    <div class="row" style="padding: 4px;">
+                        <div class="col" >
+                          <div class="input_field" width=100 style="size: 50px;"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <input  type="text" formControlName="name" name="name" placeholder="First Name" size="20"  />
+                          </div>
+                        </div>
+                        <div class="col" style="margin-right:20px;">
+                          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <input type="text" name="name" placeholder="Last Name" required style="margin-right: 0%;" formControlName="lastname"/>
+                          </div>
+                        </div>
+                    </div>
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="text" name="Username" placeholder="Username" required formControlName="username"/>
+                      </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                      <input type="email" name="email" placeholder="Email" required formControlName="mail" />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                      <input type="password" name="password" placeholder="Password" required formControlName="password"/>
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                      <input type="password" name="password" placeholder="Re-type Password" required (input)="checkPassword($event)"/>
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                      <input type="text" name="address" placeholder="Address" required formControlName="address"/>
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                      <input type="text" name="telephone" placeholder="Telephone" required formControlName="telephone"/>
+                    </div>
+                      <div class="input_field checkbox_option">
+                          <input type="checkbox" id="cb1"  (change)="toggleEditable($event)">
+                          <label for="cb1">I agree with terms and conditions</label>
+                      </div>
+                      <div class="input_field checkbox_option" >
+                          <input type="checkbox" id="cb2">
+                          <label for="cb2">I want to receive the newsletter</label>
+                      </div>
+    
+                  </form>
+                  <input class="button" type="submit" value="Register" (click)="getValidation($event)"/>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+
+  
+	</div>
+  </div>

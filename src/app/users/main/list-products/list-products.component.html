@@ -1,0 +1,40 @@
+<div class="box">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 style="color: black; margin-top:40px;" ><b>Adding a new product</b></h2>
+	  <hr>
+	  <!-- Login Form -->
+                  <form [formGroup]="productsForm">
+                          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <b class=text-principal>ID</b><input  type="text" formControlName="id" placeholder="ID product" maxlength="3" />
+                          </div>
+                        
+                        
+                          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <b class=text-principal>Product Name</b><input type="text" placeholder="Product Name" required style="margin-right: 0%;" formControlName="name"/>
+                          </div>
+                        
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <b class=text-principal>Category</b><select class="form-select" aria-label="Default select example">
+                            <option value="Flowers">Flowers</option>
+                            <option value="Gifts" selected>Gifts</option>
+                            <option value="Christmas">Christmas</option>
+                          </select>
+                      </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                      <b class=text-principal>Price</b><input type="number" placeholder="0" required formControlName="price" />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                      <b class=text-principal>Description</b><input type="text"  placeholder="description" required formControlName="description"/>
+                    </div> 
+                  </form>
+                  <input class="button" type="submit" value="Add Product" (click)="getValidation($event)"/>
+
+
+    <h1>Hola mundo {{productsForm.value|json}}</h1>
+  
+
+  
+	</div>
+  </div>
+  <hr>

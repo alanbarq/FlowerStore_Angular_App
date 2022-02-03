@@ -1,0 +1,53 @@
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Family florist operated since 1975. <i>Flower delivery in Downtown.</i>  Appelez-nous Maintenant. Commandez en ligne. Fleuriste Réputé. Types: Fleurs Fraîches, Plantes Naturelles, Paniers de fruits, Roses, Orchidées, Gerberas, Exotique, Marguerites, Tulipes.
+        </p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a  [routerLink]="['/Products/1']">Flowers</a></li>
+            <li><a [routerLink]="['/Products/2']">Gifts</a></li>
+            <li><a [routerLink]="['/Products/3']">Christmas Specials</a></li>
+            <li [hidden]="!show"><a [routerLink]="['/Cart']">Cart</a></li >
+            <li [hidden]="!show"><a [routerLink]="['/Purchases']">Deliveries</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a [routerLink]="['/login']">About Us</a></li>
+            <li><a [routerLink]="['/login']">Contact Us</a></li>
+            <li><a [routerLink]="['/login']">Contribute</a></li>
+            <li><a [routerLink]="['/login']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/login']">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+       <a [routerLink]="['/main']">Spencer Flower Shop</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" [routerLink]="['login']"><i class="fa fa-facebook"><img src="../../../assets/images/instagramicon.png" width="20" height="20"></i></a></li>
+            <li><a class="facebook" [routerLink]="['login']"><i class="fa fa-facebook"><img src="../../../assets/images/facebookicon.png" width="20" height="20"></i></a></li>
+            <li><a class="facebook" [routerLink]="['login']"><i class="fa fa-facebook"><img src="../../../assets/images/whatsicon.png" width="20" height="20"></i></a></li>
+            <li><a class="facebook" [routerLink]="['login']"><i class="fa fa-facebook"><img src="../../../assets/images/amazonicon.png" width="20" height="20"></i></a></li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>

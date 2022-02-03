@@ -1,0 +1,142 @@
+<div class=" container-fluid my-5 ">
+    <div class="row justify-content-center ">
+        <div class="col-xl-10">
+            <div class="card shadow-lg ">
+                <div class="row p-2 mt-3 justify-content-between mx-sm-2">
+                    <div class="col">
+                        <p class="text-muted space mb-0 shop"> Spencer's Flower Shop</p>
+                        <p class="text-muted space mb-0 shop">Mexico-India</p>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-md-5">
+                        <div class="card border-0">
+                            <div class="card-header pb-0">
+                                <h2 class="card-title space ">Checkout</h2>
+                                <p class="card-text text-muted mt-4 space">SHIPPING DETAILS</p>
+                                <hr class="my-0">
+                            </div>
+                            <div class="card-body">
+                                <form [formGroup]="newTicketForm">
+        
+                                    <div style="margin-bottom: 10px;">
+                                        Address 1 <input type="text" class="form-control form-control-sm" formControlName="deliveryAddress" required minlength=2>
+
+                                    </div>
+                                    <div >
+                                        Address 2 <input type="text" class="form-control form-control-sm">
+                                    </div>
+                                </form>
+                                <div class="row mt-4">
+                                    <div class="col">
+                                        <p class="text-muted mb-2">PAYMENT DETAILS</p>
+                                        <hr class="mt-0">
+                                    </div>
+                                </div>
+                                <form [formGroup]="CardForm">
+                                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">NAME ON CARD</label> <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="Juan Jaimes" formControlName="nameCard"> </div>
+                                <div class="form-group"> <label for="NAME" class="small text-muted mb-1">CARD NUMBER</label> <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="4534 5555 5555 5555" formControlName="CC"  maxlength="16"> </div>
+                                <div class="row no-gutters">
+                                    <div class="col-sm-6 pr-sm-2">
+                                        <div class="form-group"> <label for="NAME" class="small text-muted mb-1">VALID THROUGH</label> <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="00/00" formControlName="date" maxlength="5"> </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group"> <label for="NAME" class="small text-muted mb-1">CVC CODE</label> <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="XXX" formControlName="CVV"  maxlength="3"> </div>
+                                    </div>
+                                </div>
+                                </form>
+                                <div class="row mb-md-5">
+
+                                    <div class="col"> <button type="button" name="" id="" class="btn btn-lg btn-block " (click)="createTicket()">Accept Payment</button> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card border-0 ">
+                            <div class="card-header pb-2" style="margin-bottom: 20px; margin-top:4.5px">
+                                <p class="card-text text-muted mt-md-4 mb-2 space">YOUR ORDER</p>
+                                <div class="row justify-content-between">
+                                    <div class="col-auto col-md-7">
+                                        <div class="media flex-column flex-sm-row" style="margin-right: 20px;">
+                                            <div class="media-body my-auto">
+                                                <div class="row ">
+                                                    <div class="col-auto" style="padding-left:100px;">
+                                                        <p class="mb-0"><b>Product</b></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" pl-0 flex-sm-col col-auto my-auto">
+                                        <p class="mb-0"><b>Quantity</b></p>
+                                    </div>
+                                    <div class=" pl-0 flex-sm-col col-auto my-auto ">
+                                        <p class="mb-0"><b>Price</b></p>
+                                    </div>
+                                </div>
+                                <hr class="my-2">
+
+                            </div>
+                            <div class="card-body pt-0" *ngFor="let pr of ListaProducts">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto col-md-7">
+                                        <div class="media flex-column flex-sm-row" style="margin-right: 20px;"> <img class=" img-fluid" src="https://cdn03.lolaflora.com/bonnygift/lf792-1/M/lf792-1-8d9ae47f7e0bf3e-fb55dd63-jpg" width="62" height="62">
+                                            <div class="media-body my-auto">
+                                                <div class="row ">
+                                                    <div class="col-auto" style="padding-left:40px;">
+                                                        <p class="mb-0"><b>{{pr.Name}}</b></p><small class="text-muted">{{pr.Description}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" pl-0 flex-sm-col col-auto my-auto">
+                                        <p class="boxed-1">{{pr.Quantity}}</p>
+                                    </div>
+                                    <div class=" pl-0 flex-sm-col col-auto my-auto ">
+                                        <p><b>{{pr.Price*pr.Quantity}}</b></p>
+                                    </div>
+                                </div>
+                                <hr class="my-2">
+                            </div>
+                            <div class="card-body pt-0">
+        
+                                <hr class="my-2">
+                                <div class="row ">
+                                    <div class="col">
+                                        <div class="row justify-content-between">
+                                            <div class="col-4">
+                                                <p class="mb-1"><b>Subtotal</b></p>
+                                            </div>
+                                            <div class="flex-sm-col col-auto">
+                                                <p class="mb-1"><b>{{this.total}}</b></p>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-between">
+                                            <div class="col">
+                                                <p class="mb-1"><b>Discount</b></p>
+                                            </div>
+                                            <div class="flex-sm-col col-auto">
+                                                <p class="mb-1"><b>-$20</b></p>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-between">
+                                            <div class="col-4">
+                                                <p><b>Total</b></p>
+                                            </div>
+                                            <div class="flex-sm-col col-auto">
+                                                <p class="mb-1"><b>{{this.total-20}}</b></p>
+                                            </div>
+                                        </div>
+                                        <hr class="my-0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

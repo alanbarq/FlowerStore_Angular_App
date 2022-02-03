@@ -1,0 +1,39 @@
+<div class="container">
+
+    <button type="button" class="btn btn-light" style="margin-bottom: 20px;" ><a [routerLink]="['/main']">Return to menu</a></button>
+
+
+</div>
+<div class="container">
+<table class="table">
+    <!-- <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
+
+        
+
+      </tr>
+    </thead> -->
+    <tbody>
+      <div class="row">
+        
+      <tr class="col-md-4" *ngFor="let pr of Products">
+        <div class="card" style="width: 18rem; margin-bottom: 20px;">
+          <img class="card-img-top" src="https://th.bing.com/th/id/R.b7a1161c5c22a984a5394645bfd760ef?rik=UcfmkwB42nJN9Q&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f03%2fflower-wallpaper-20.jpg&ehk=RF1XEIl0jQIBUT0%2fsDIEIEAZLDrjecA8al%2bgmch%2f6xQ%3d&risl=&pid=ImgRaw&r=0" alt="Card image cap" style="height: 200px;">
+          <div class="card-body">
+            <h3 class="card-title">{{pr.Name}}</h3>
+            <p class="card-text">{{pr.Description}}</p>
+            <p class="card-text">Price: {{pr.Price}}</p>
+            <button class="btn btn-primary" (click)="AddProduct(pr.ID)" ngbPopover="Product added" [closeDelay]="500" triggers="click">Add to cart</button>
+          </div>
+        </div>
+      </tr>
+    </div>
+      
+    </tbody>
+  </table>
+</div>

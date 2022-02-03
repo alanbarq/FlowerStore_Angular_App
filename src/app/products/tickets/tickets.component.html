@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Tickets</h1><br>
+
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ticket Code</th>
+        <th scope="col">DateOfCreation</th>
+        <th scope="col">Delivery Address</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of TicketList">
+        <th scope="row" class="underlineHover"><a (click)="detailsTicket(ticket.ID_ticket)">{{ticket.Ticket}}</a></th>
+        <td>{{ticket.datetime}}</td>
+        <td>{{ticket.deliveryAddress}}</td>
+
+      </tr>
+    </tbody>
+  </table>

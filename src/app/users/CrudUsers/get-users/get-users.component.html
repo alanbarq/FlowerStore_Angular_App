@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Users list</h1><br>
+    <button type="button" class="btn btn-primary" style="margin-bottom: 20px;" (click)="newUser()">New User</button>
+    <button type="button" class="btn btn-warning" style="margin-bottom: 20px; margin-left: 30px;" (click)="BackToMenu()">Back to main menu</button>
+
+
+</div>
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID_user</th>
+        <th scope="col">name</th>
+        <th scope="col">lastname</th>
+        <th scope="col">Username</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Mail</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let us of Users" (click)="editUser(us.ID_user)">
+        <th scope="row">{{us.ID_user}}</th>
+        <td>{{us.name}}</td>
+        <td>{{us.lastname}}</td>
+        <td>{{us.username}}</td>
+        <td>{{us.telephone}}</td>
+        <td>{{us.mail}}</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>

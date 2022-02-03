@@ -1,0 +1,34 @@
+<div class="container">
+
+    <button type="button" class="btn btn-light" style="margin-bottom: 20px;" ><a [routerLink]="['/Tickets/1']">Return to tickets</a></button>
+
+
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prT of TicketData">
+        <td style="width: 100px;height: 100px;">
+                <img src="https://th.bing.com/th/id/R.b7a1161c5c22a984a5394645bfd760ef?rik=UcfmkwB42nJN9Q&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f03%2fflower-wallpaper-20.jpg&ehk=RF1XEIl0jQIBUT0%2fsDIEIEAZLDrjecA8al%2bgmch%2f6xQ%3d&risl=&pid=ImgRaw&r=0" style="width: 100px;height: 100px;">
+        </td>
+        <th scope="row">{{prT.Name}}</th>
+        <td>{{prT.Price}}</td>
+        <td>{{prT.Description}}</td>
+        <td>1</td>
+        <td>Total</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>

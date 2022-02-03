@@ -1,0 +1,15 @@
+<div class="container">
+	<div id="formContent">
+        <form [formGroup]="mailForm" (ngSubmit)="Open()">
+	  <!-- Login Form -->
+            <input type="text" id="login" name="login" placeholder="mail" formControlName="mail"><br><br><br>
+            <input type="submit"  value="SendMessage" required >
+        </form>
+        <br><br>
+        <button class="btn btn-dark"><a  [routerLink]="['/login']">Go back to login menu</a>
+        </button>
+	  <!-- Remind Passowrd -->
+  
+	</div>
+  </div>
+  <hr>

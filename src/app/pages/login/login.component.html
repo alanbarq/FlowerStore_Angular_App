@@ -1,0 +1,27 @@
+<div class="box">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 class="active"> Sign In </h2>
+	  <h2 class="inactive underlineHover"><a [routerLink]="['/register']">Sign Up</a></h2>
+	  <hr>
+	  <h2>Welcome back to Spencer's</h2>
+  
+	  <!-- Login Form -->
+	  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+		<input type="text" id="login" name="login" placeholder="username" formControlName="username">
+		<input type="password" id="password"  name="login" placeholder="password" formControlName="password">
+		<input type="submit"  value="Log In">
+		<div class="alert alert-danger" style="margin-top: 10px;" *ngIf="status"><span>The user is not found, please try again</span></div>
+		
+	  </form>
+  
+	  <!-- Remind Passowrd -->
+	  <div id="formFooter">
+		<a class="underlineHover" [routerLink]="['/rememberUsername']">Forgot Password?</a>
+		<p></p>
+		<p><a class="underlineHover"  [routerLink]="['/rememberUsername']">Forgot Username?</a></p>
+	  </div>
+  
+	</div>
+  </div>
+  <hr>

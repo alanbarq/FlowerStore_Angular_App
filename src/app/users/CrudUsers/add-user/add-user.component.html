@@ -1,0 +1,62 @@
+<div class="container">
+    <form [formGroup]="newUserForm" (ngSubmit)="getValidation(newUserForm.value)">
+        <div class="form-group row">
+            <div class="col">
+            <label for="Username">Username</label>
+            <input type="text" class="form-control"  placeholder="Enter name" formControlName="username">
+            </div>
+            <div class="col">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control"  placeholder="Enter name" formControlName="name">
+            </div>
+            <div class="col">
+                <label for="Lastname">Lastname</label>
+                <input type="text" class="form-control" placeholder="Enter name" formControlName="lastname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col">
+            <label for="Passowrd">Password</label>
+            <input type="password" class="form-control"  placeholder="Enter password" formControlName="password">
+            </div>
+            <div class="col">
+                <label for="Passowrd">Re-enter Password</label>
+                <input type="password" class="form-control"  placeholder="Re enter password" required (input)="checkPassword($event)">
+                </div>
+            <div class="col">
+                <label for="Mail">Mail</label>
+                <input type="text" class="form-control"  placeholder="Enter mail" formControlName="mail">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col">
+            <label for="Telephone">Telephone</label>
+            <input type="text" class="form-control"  placeholder="Enter telephone" formControlName="telephone">
+            </div>
+            <div class="col ">
+                <label for="Address">Address</label>
+                <input type="text" class="form-control"  placeholder="Address" formControlName="address">
+            </div>
+        </div>
+        <h3>Role</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" formControlName="Role">
+            <label class="form-check-label" for="inlineRadio1">User</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" formControlName="Role">
+            <label class="form-check-label" for="inlineRadio2">Administrator</label>
+          </div>
+        
+        <br><br>
+        <div class="form-group row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px; width: 100%;">Save</button>
+            </div>
+           
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark" style="margin-bottom: 20px; width: 100%;" (click)="returntoGet()">Return</button>
+        </div>
+    </form>
+</div>

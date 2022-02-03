@@ -1,0 +1,109 @@
+
+<div class="container">
+<body>
+  <main>
+    <div class="basket">
+      <div class="basket-module" style="margin-bottom: 20px;">
+        <label for="promo-code">Do you have a code? Use it in here!</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field" style="width: 350px;" [(ngModel)]="message">
+        <button class="promo-code-cta" (click)="validateCode($event)">Apply</button>
+      </div>
+
+      <div class="basket-module">
+        <label for="promo-code">Invite a friend and get a 5% of discount in your purchase</label>
+        <input id="promo-code" type="email" name="promo-code" class="promo-code-field" style="width: 350px;" placeholder="spencers@mail.com" [(ngModel)]="mail">
+        <button class="promo-code-cta" (click)="validateMail($event)">Apply</button>
+      </div>
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+          <li class="quantity">Quantity</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
+      </div>
+    <div class="container">
+      <div class="basket-product" *ngFor="let pr of ListaProducts" >
+        <div class="item">
+          <div class="product-image">
+            <img src="https://cdn03.lolaflora.com/bonnygift/lf792-1/M/lf792-1-8d9ae47f7e0bf3e-fb55dd63-jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+
+            <h1><strong><span class="item-quantity"></span>{{pr.Name}}</strong></h1>
+            <p><strong>{{pr.Description}}</strong></p>
+            <p>{{pr.Code_product}}</p>
+          </div>
+        </div>
+        <div class="price">{{pr.Price}}</div>
+        <div class="quantity">
+          <input type="number" name="quantity" value={{pr.Quantity}} class="quantity-field" (click)="ChangeQuantity(pr.ID,pr.User,pr.ID_product,$event)" >
+        </div>
+        <div class="subtotal">{{pr.Price*pr.Quantity}}</div>
+        <div class="remove">
+          <button (click)="removeObject(pr.ID,pr.User,pr.ID_product,pr.Quantity)">Remove</button>
+        </div>
+      </div>
+    </div>
+      <!-- <div class="basket-product" *ngIf="!hidden2">
+        <div class="item">
+          <div class="product-image">
+            <img src="https://www.yaakunflores.com/uploads/arreglos/caja-exagonal-lila-yaakun-carino.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">1</span> x Whistles</strong> Amella Lace Midi Dress</h1>
+            <p><strong>Navy, Size 10</strong></p>
+            <p>Product Code - 232321939</p>
+          </div>
+        </div>
+        <div class="price">{{price1}}</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field" [(ngModel)]="quantity1">
+        </div>
+        <div class="subtotal">{{price1*quantity1}}</div>
+        <div class="edit">
+          <button (click)="SumPrice()">Edit Product</button>
+        </div>
+        <div class="remove">
+          <button (click)="removeObject2($event)">Remove</button>
+        </div> -->
+
+      <!-- </div> -->
+    </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span>Shopping Cart</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+
+          <div class="subtotal-value final-value" id="basket-subtotal">{{total}}</div>
+          <div class="summary-promo" *ngIf="promotionValid">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo">{{promDiscount}}</div>
+          </div>
+        </div>
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+              <option value="0" selected="selected">Select Collection or Delivery</option>
+             <option value="collection">Collection</option>
+             <option value="first-class">Royal Mail 1st Class</option>
+             <option value="second-class">Royal Mail 2nd Class</option>
+             <option value="signed-for">Royal Mail Special Delivery</option>
+          </select>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">{{total-promDiscount}}</div>
+        </div>
+        <div class="summary-total" *ngIf="promotionMail">
+          <div class="total-title">Total with discount</div>
+          <div class="total-value final-value" id="basket-total">{{(total-promDiscount)*.95}}</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta" (click)="clickMethod('name')">Go to Secure Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+</div>

@@ -1,0 +1,25 @@
+<p>
+    <mat-toolbar  color="primary" >
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item><a [routerLink]="['/Products/1']">Flowers</a></button>
+            <button mat-menu-item><a [routerLink]="['/Products/2']">Gifts</a></button>
+            <button mat-menu-item><a [routerLink]="['/Products/3']">Christmas special</a></button>
+        </mat-menu>
+        <button mat-icon-button style="margin-left: 50px;margin-right: 600px;" [matMenuTriggerFor]="appMenu">Menu</button>
+      <span class="example-spacer"> Spencers Flower Store</span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" [hidden]="!show">
+        <mat-icon><a [routerLink]="['/Cart']">shopping_cart</a></mat-icon>
+      </button>
+      <!-- <input type="button" src="../../../assets/images/instagramicon.png"/> -->
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" ng-click="AcceptedUsername()">
+        <mat-icon>map</mat-icon>
+      </button>
+      <h3 [hidden]="!show">{{this.user}}</h3>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [hidden]="show">
+        <mat-icon><a [routerLink]="['/login']">person</a></mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logOut()" [hidden]="!show">
+        <mat-icon><a [routerLink]="['logout']">exit_to_app</a></mat-icon>
+      </button>
+    </mat-toolbar>
+</p>
